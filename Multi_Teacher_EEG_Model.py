@@ -926,7 +926,7 @@ def build_teacher(input_shape):
 
     logits = Dense(NUM_CLASSES, name="logits")(z)
 
-    return Model(inputs, logits, name="M13_7_Teacher1_CNNFirst_Attention_CNN_Transformer")
+    return Model(inputs, logits, name="M13_8_Teacher1_CNNFirst_Attention_CNN_Transformer")
 
 
 
@@ -976,7 +976,7 @@ def build_teacher2(input_shape):
 
     logits = Dense(NUM_CLASSES, name="logits")(z)
 
-    return Model(inputs, logits, name="M13_7_Teacher2_Pure_LightTransformer")
+    return Model(inputs, logits, name="M13_8_Teacher2_Pure_LightTransformer")
 
 
 
@@ -1371,7 +1371,7 @@ def main():
     ensure_dir(FIGURES_DIR)
 
     print("=" * 72)
-    print("MODEL 13.7")
+    print("MODEL 13.8")
     print("=" * 72)
     print("Feature mode:", FEATURE_MODE)
     print("Split protocol:", SPLIT_PROTOCOL)
@@ -1464,7 +1464,7 @@ def main():
     student.summary()
 
     save_model_architecture(
-        os.path.join(FIGURES_DIR, "model_13_7_architecture_summary.txt"),
+        os.path.join(FIGURES_DIR, "model_13_8_architecture_summary.txt"),
         [teacher1, teacher2, student]
     )
 
@@ -1522,7 +1522,7 @@ def main():
     )
 
     final_summary = []
-    final_summary.append("Model 13.7 Window Version Final Summary\n")
+    final_summary.append("Model 13.8 Window Version Final Summary\n")
     final_summary.append(f"Feature mode: {FEATURE_MODE}\n")
     final_summary.append(f"Split protocol: {SPLIT_PROTOCOL}\n")
     final_summary.append(f"Input shape: {input_shape}\n")
